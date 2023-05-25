@@ -1,7 +1,11 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
+
 ### AIM: To implement 4 bit up and down counters and validate  functionality.
+
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
+
 ### SOFTWARE REQUIRED:   Quartus prime
+
 ### THEORY 
 
 ## UP COUNTER 
@@ -45,34 +49,66 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
+
+
 ### Procedure
-/* write all the steps invloved */
-
-
+```
+Step 1: Module Declaration. Module is a keywords defined in Verilog.
+Step 2: Input-Output Declaration. Clock and reset are the inputs.
+Step 3: Declare the always keyword.
+Step 4: Use if loop for the functionality. 
+Step 5: Assign the counter_up & counter_down.
+Step 6: End the module
+```
 
 ### PROGRAM 
+```
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: JAYABHARATHI 
+RegisterNumber:  212222100013
 */
 
+UP COUNTER :
+
+module sync(clk,A);
+input clk;
+output reg [0:2]A;
+always@(posedge clk)
+begin
+   A[0]=(((A[1])&(A[2]))^A[0]);
+	A[1]=(A[2])^A[1];
+	A[2]=1^A[2];
+end
+endmodule
+
+DOWN COUNTER:
+
+
+
+```
+### RTL LOGIC :
+
+## UP COUNTER
+
+![syupnv](https://github.com/Jayabharathi3/Exp-7-Synchornous-counters-/assets/118787327/1e1c527c-8e72-497e-b5fb-560ca06184df)
+
+
+## DOWN COUNTER
 
 
 
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+
+###TIMING DIGRAMS 
+
+##  UP COUNTER
+
+![syuptl](https://github.com/Jayabharathi3/Exp-7-Synchornous-counters-/assets/118787327/7ebf416e-f7b7-4a63-a6e7-46554f22cd7d)
 
 
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
+##  DOWN COUNTER
 
 
 
@@ -80,9 +116,14 @@ RegisterNumber:
 
 ### TRUTH TABLE 
 
+##  UP COUNTER
+
+##  DOWN COUNTER
 
 
 
 
 
 ### RESULTS 
+
+Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
